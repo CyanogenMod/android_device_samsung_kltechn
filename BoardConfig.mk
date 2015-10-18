@@ -23,7 +23,7 @@ BOARD_CUSTOM_BOOTIMG_MK := device/samsung/kltechn/mkbootimg.mk
 
 # Init
 TARGET_INIT_VENDOR_LIB := libinit_msm
-TARGET_LIBINIT_DEFINES_FILE := device/samsung/kltechn/init/init_klte.c
+TARGET_LIBINIT_DEFINES_FILE := device/samsung/kltechn/init/init_klte.cpp
 TARGET_UNIFIED_DEVICE := true
 
 # NFC
