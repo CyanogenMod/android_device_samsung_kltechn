@@ -36,10 +36,10 @@
 
 #include "init_msm.h"
 
-void gsm_properties()
+void gsm_properties(char const default_network[])
 {
-    property_set("telephony.lteOnGsmDevice", "0");
-    property_set("ro.telephony.default_network", "0");
+    property_set("telephony.lteOnGsmDevice", "1");
+    property_set("ro.telephony.default_network", default_network);
     property_set("ro.telephony.ril.config", "newDialCode");
 }
 
@@ -67,14 +67,14 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
         property_set("ro.build.description", "kltezn-user 5.0 LRX21T G9006VZNU1BOC2 release-keys");
         property_set("ro.product.model", "SM-G9006V");
         property_set("ro.product.device", "kltezn");
-        gsm_properties();
+        gsm_properties("9");
     } else if (strstr(bootloader, "G9008V")) {
         /* kltezm */
         property_set("ro.build.fingerprint", "samsung/kltezm/kltezm:5.0/LRX21T/G9008VZMU1BOC2:user/release-keys");
         property_set("ro.build.description", "kltezm-user 5.0 LRX21T G9008VZMU1BOC2 release-keys");
         property_set("ro.product.model", "SM-G9008V");
         property_set("ro.product.device", "kltezm");
-        gsm_properties();
+        gsm_properties("17");
     } 
 
     property_get("ro.product.device", device);
