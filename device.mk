@@ -23,7 +23,11 @@ $(call inherit-product-if-exists, vendor/samsung/kltechn/kltechn-vendor.mk)
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
 # NFC
+# See https://github.com/CyanogenMod/android_external_libnfc-nci/blob/cm-14.1/halimpl/pn54x/Android.mk#L21
+# for magic values of NXP_CHIP_TYPE.
+NXP_CHIP_TYPE := 1
 PRODUCT_PACKAGES += \
+    libpn547_fw \
     nfc_nci.pn54x.default
 
 PRODUCT_COPY_FILES += \
